@@ -1,7 +1,7 @@
 function activeAlbum(state={}, action) {
 	switch(action.type) {
 		case 'GOT_ALBUM_INFO':
-			return action.place;
+			return action.album;
 		case 'GOT_ALBUMS':
 			return {};
 		default:

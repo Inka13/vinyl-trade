@@ -12,7 +12,18 @@ export const getSearchResults = (album) => {
   		});
 	}
 };
-
+export const getAllTrades = () => {
+	return(dispatch) => {
+		return axios.get("/albums/db/")
+			.then((response) => {
+				console.log(response.data.albums);
+				dispatch(gotAlbums(response.data.albums))
+			})
+			.catch(function (error) {
+    		console.log(error);
+  		});
+	}
+};
 export const gotAlbums = (albums) => {
 	return {
 		type: "GOT_ALBUMS",
