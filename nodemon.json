@@ -1,6 +1,6 @@
 {
 	"env": {
-		"MONGOLAB_URI": "mongodb://Inka13:pollerapppass@ds251737.mlab.com:51737/poller-app",
+		"MONGOLAB_URI": "mongodb://Inka13:vinylpass@ds237858.mlab.com:37858/vinyl",
 		"JWT_KEY": "secret"
 	}
 }

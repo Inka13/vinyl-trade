@@ -7,18 +7,20 @@ class SigninForm extends React.Component {
     submit = (e) => {
     e.preventDefault();
     this.props.submitSignup(this.refs.name.value, this.refs.email.value, this.refs.password.value);
+    
     }
     
     render() {
         return (
+            <div>
                 <form  className="ui form" id="signinform" onSubmit={this.submit}>
                     <div className="ui massive center aligned top attached label">
                         Sign up
-                        <button className="ui mini right floated button" onClick={this.props.hideForm}>X</button>
+                        <button className="ui mini right floated button" onClick={this.props.hideForm} type="button">X</button>
                     </div>
                     <div className="field">
                         <label>E-mail</label>
-                        <input type="email" placeholder="Enter your email..." required/>     
+                        <input ref="email" type="email" placeholder="Enter your email..." required/>     
                     </div>
                     <div className="field">
                         <label>Username:</label>
@@ -36,9 +38,11 @@ class SigninForm extends React.Component {
                         <button className="ui center floated button" type="submit">Submit</button>
                     </div>
                 </form>
+                </div>
         );
     }
 }
+
 function matchDispatchToProps(dispatch) {
     return bindActionCreators({
         submitSignup,

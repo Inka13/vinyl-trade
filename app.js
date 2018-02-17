@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, 'client/build')));
+
 app.use('/albums', albumRoutes);
 app.use('/users', userRoutes);
 

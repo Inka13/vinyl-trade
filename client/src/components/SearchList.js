@@ -9,19 +9,16 @@ class SearchList extends Component {
         const list = [];
          this.props.albums.forEach((album, i) => {
             //console.log(album)
-              list.push(<div className="four wide computer sixteen wide mobile eight wide tablet column"><Album key={i} album={album} getAlbum={this.props.getAlbumInfo}/></div>);
+              list.push(<div key={i} className="three wide computer eight wide mobile four wide tablet column"><Album key={i} album={album} getAlbum={this.props.getAlbumInfo}/></div>);
         });
         return list;
     }
     render() {
         if(this.props.albums){   
             return (
-                <div>
-                    <div className="placeholder"></div>
-                    <div className="ui stackable four column grid">
+                    <div className="ui stackable column grid">
                         {this.createList()}    
                     </div>
-                </div>
             );
         }
         return (<div></div>);

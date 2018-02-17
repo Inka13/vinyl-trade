@@ -6,9 +6,11 @@ const jwt = require('jsonwebtoken');
 exports.signup = (req, res, next) => {
 	User.find({ $or: [ {email: req.body.email}, { name: req.body.name } ] }).exec()
 	.then(users => {
+		console.log(process.env.MONGOLAB_URI);
 		if(users.length>0) {
-			res.status(200).json({
-				message: "No auth"
+			res.status(400).json({
+				message: "No auth",
+				createdUser: users[0]
 			});
 		} else {
 			bcrypt.hash(req.body.password, 10, (err, hash) => {

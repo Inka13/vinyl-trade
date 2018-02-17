@@ -48,7 +48,7 @@ exports.getAlbumInfo = (req, res, next) => {
 							duration: track.duration
 						}
 					}),
-					description: info.wiki.content
+					description: info.wiki ? info.wiki.content : ''
 				}
 				
 				res.status(200).json({

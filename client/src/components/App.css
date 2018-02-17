@@ -1,8 +1,13 @@
+body {
+	background-image: url('../images/banner.jpg');
+	background-size: cover;
+}
 .main {
 	padding: 20px;
+    background-color: white;
 }
 .placeholder {
-	height: 70px;
+	height: 40px;
 }
 .formback {
     position: fixed;
@@ -22,4 +27,13 @@
     color: rgb(127, 127, 127);
     padding: 20px;
     padding-top: 50px;
+}
+.banner {
+	color: white;
+	text-align: center;
+	font-size: 8rem;
+}
+
+.clear {
+  clear: both;
 }

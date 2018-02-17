@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export const getSearchResults = (album) => {
+export const getSearchResults = (album, path) => {
 	return(dispatch) => {
-		return axios.get("/albums/search/" + album)
+		return axios.get("/albums/" + path + "/" + album)
 			.then((response) => {
 				console.log(response.data.albums);
 				dispatch(gotAlbums(response.data.albums))

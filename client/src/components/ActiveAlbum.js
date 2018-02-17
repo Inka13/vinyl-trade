@@ -18,19 +18,18 @@ class ActiveAlbum extends React.Component {
         const title = this.props.activeAlbum.title;
         const artist = this.props.activeAlbum.artist;
         const image = this.props.activeAlbum.image;
-        
         const description = this.props.activeAlbum.description;
         return (
             <div>
-            <div className="placeholder"></div>
-            <div className="ui stackable three column grid">
+            
+            <div className="ui stackable two column grid">
                 
                 <div className="column">
                   <img src={image} className="ui large centered image" alt="album art"/>
                 </div>
                 
                 <div className="column">
-                    <div className="ui centered card">
+                    <div className="ui left floated fluid card">
                         <div className="content">
                             <div className="medium header">{title}</div>
                             <div className="meta">Artist: {artist}</div>
@@ -45,18 +44,18 @@ class ActiveAlbum extends React.Component {
                         <div className="ui buttons">
                            
                             <button className="ui green button">Collection</button>
-                            <div class="or"></div>
+                            <div className="or"></div>
                             <button className="ui red button">Trades</button>
-                            <div class="or"></div>
+                            <div className="or"></div>
                             <button className="ui blue button">Wishlist</button>
                           </div>
                     </div>
                 </div>
             </div>
             <div className="placeholder"></div>
-            <div class="ui fluid container">
-                <h2 class="ui header">About {title}</h2>
-                <p>{description}</p>
+            <div className="ui fluid container">
+                <h2 className="ui header">About {title}</h2>
+                <p>{description.length>0 ? description : 'No available content...' }</p>
             </div>
         </div>  
             

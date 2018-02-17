@@ -10,11 +10,12 @@ class LoginForm extends React.Component {
     
     render() {
         return (
+            <div>
                 <form className="ui form" onSubmit={this.submit} id="loginform" >
                     
                     <div className="ui massive center aligned top attached label">
                         Log in
-                        <button className="ui mini right floated button" onClick={this.props.hideForm}>X</button>
+                        <button className="ui mini right floated button" onClick={this.props.hideForm} type="button">X</button>
                     </div>
                     <div className="field">
                         <label>Username:</label>
@@ -32,6 +33,7 @@ class LoginForm extends React.Component {
                         <button className="ui center floated button" type="submit">Submit</button>
                     </div>
                 </form>
+                </div>
         );
     }
 }
@@ -43,6 +45,7 @@ function matchDispatchToProps(dispatch) {
 }
 function mapStateToProps(state) {
     return {
+        form: state.form,
         messages: state.messages
     };
 }
